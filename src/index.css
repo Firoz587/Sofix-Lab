@@ -1104,6 +1104,386 @@ footer > span {
   }
 }
 
+/* Device refinements: tablets, modern phones, iPhone Mini/SE and landscape. */
+.header {
+  position: sticky;
+  top: 0;
+}
+
+section[id] {
+  scroll-margin-top: 82px;
+}
+
+@media (max-width: 760px) {
+  section[id] {
+    scroll-margin-top: 72px;
+  }
+
+  .header {
+    padding-right: max(18px, env(safe-area-inset-right));
+    padding-left: max(18px, env(safe-area-inset-left));
+  }
+
+  .nav-open {
+    max-height: calc(100dvh - 72px);
+    padding-right: max(24px, env(safe-area-inset-right));
+    padding-bottom: max(26px, env(safe-area-inset-bottom));
+    padding-left: max(24px, env(safe-area-inset-left));
+    overflow-y: auto;
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+  }
+
+  .nav-open a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line-dark);
+    font-size: 14px;
+  }
+
+  .menu-button,
+  .primary-button,
+  .outline-button,
+  .dark-button {
+    min-height: 46px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-left: max(20px, env(safe-area-inset-left));
+  }
+
+  .hero-copy {
+    padding-top: clamp(64px, 12vw, 86px);
+    padding-bottom: 28px;
+  }
+
+  h1 {
+    max-width: 620px;
+    font-size: clamp(52px, 15vw, 76px);
+    line-height: 0.98;
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    max-width: 580px;
+    margin: 24px 0 28px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .stats {
+    width: 100%;
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats > div,
+  .stats > div + div {
+    min-width: 0;
+    padding: 0 14px;
+  }
+
+  .stats > div:first-child {
+    padding-left: 0;
+  }
+
+  .stats > div:last-child {
+    padding-right: 0;
+  }
+
+  .stats span {
+    line-height: 1.35;
+  }
+
+  .hero-art {
+    min-height: clamp(390px, 110vw, 520px);
+    margin-top: 10px;
+  }
+
+  .blue-shape {
+    width: 88%;
+    height: 78%;
+    left: 6%;
+    bottom: 5%;
+  }
+
+  .hero-art > img {
+    width: 88%;
+    height: 84%;
+    left: 6%;
+    bottom: 7%;
+    object-position: center 16%;
+  }
+
+  .services,
+  .portfolio,
+  .about,
+  .process,
+  .why,
+  .testimonials,
+  .contact {
+    padding: clamp(64px, 14vw, 82px) max(20px, env(safe-area-inset-right))
+      clamp(64px, 14vw, 82px) max(20px, env(safe-area-inset-left));
+  }
+
+  .services-intro h2,
+  .section-title h2,
+  .about h2,
+  .process h2,
+  .why h2,
+  .contact h2 {
+    font-size: clamp(38px, 11vw, 54px);
+    line-height: 1.04;
+  }
+
+  .service-grid {
+    gap: 14px;
+  }
+
+  .service-card {
+    min-height: 158px;
+    padding: 22px;
+    border-radius: 6px;
+  }
+
+  .filters {
+    margin-right: -20px;
+    padding-right: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    min-height: 38px;
+    padding: 9px 16px;
+    flex: 0 0 auto;
+  }
+
+  .project-grid {
+    gap: 18px;
+  }
+
+  .project-card {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-overlay {
+    padding: 70px 18px 18px;
+  }
+
+  .project-overlay a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .about {
+    gap: 58px;
+  }
+
+  .about-image {
+    width: min(100%, 500px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    padding: 12px;
+    justify-self: center;
+  }
+
+  .about-shape {
+    right: -12px;
+    bottom: -14px;
+  }
+
+  .about-copy {
+    padding-top: 0;
+  }
+
+  .about-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .about-facts > div {
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .process-steps {
+    gap: 14px;
+  }
+
+  .process-steps article {
+    min-height: 180px;
+    padding: 20px;
+    border: 1px solid var(--line-dark);
+    background: var(--card);
+  }
+
+  .why-grid {
+    gap: 12px;
+  }
+
+  .why-grid article {
+    min-height: 108px;
+  }
+
+  .testimonial-grid {
+    gap: 14px;
+  }
+
+  .testimonial-grid article {
+    min-height: 175px;
+  }
+
+  .contact {
+    gap: 38px;
+  }
+
+  .contact-art {
+    padding-top: 6px;
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  footer {
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+    padding-left: max(20px, env(safe-area-inset-left));
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo strong {
+    font-size: 15px;
+  }
+
+  .hero-actions > a {
+    width: 100%;
+  }
+
+  .stats strong {
+    font-size: 16px;
+  }
+
+  .stats span {
+    max-width: none;
+    font-size: 8px;
+  }
+
+  .about-facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-facts > div {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps article {
+    min-height: 155px;
+  }
+
+  .section-title.compact h2 {
+    font-size: 34px;
+  }
+
+  footer nav {
+    gap: 12px 20px;
+  }
+
+  footer nav a {
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 370px) {
+  .header {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .logo small {
+    display: none;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .hero,
+  .services,
+  .portfolio,
+  .about,
+  .process,
+  .why,
+  .testimonials,
+  .contact {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .stats > div,
+  .stats > div + div {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  .hero-art {
+    min-height: 365px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 900px) {
+  .nav-open {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 28px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .hero-copy {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .hero-art {
+    min-height: 440px;
+  }
+
+  .stats {
+    margin-top: 34px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
